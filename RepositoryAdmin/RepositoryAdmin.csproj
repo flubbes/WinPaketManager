@@ -56,6 +56,12 @@
     <Compile Include="NewPacketForm.Designer.cs">
       <DependentUpon>NewPacketForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="NewRepositoryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewRepositoryForm.Designer.cs">
+      <DependentUpon>NewRepositoryForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Packet.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -66,6 +72,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="NewPacketForm.resx">
       <DependentUpon>NewPacketForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewRepositoryForm.resx">
+      <DependentUpon>NewRepositoryForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

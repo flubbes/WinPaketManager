@@ -35,15 +35,14 @@ namespace RepositoryAdmin
             Application.Exit();
         }
 
-        private void CreateNewPacket(Packet p)
-        {
-
-        }
-
         private void changeToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
         }
 
+        private void CreateNewPacket(Packet p)
+        {
+
+        }
     }
 }
