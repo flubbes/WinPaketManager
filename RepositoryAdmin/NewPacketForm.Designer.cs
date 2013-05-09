@@ -31,7 +31,7 @@
             this.tbxName = new System.Windows.Forms.TextBox();
             this.lblName = new System.Windows.Forms.Label();
             this.lblVersion = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tbxVersion = new System.Windows.Forms.TextBox();
             this.lblFile32 = new System.Windows.Forms.Label();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.btnOpenFile32 = new System.Windows.Forms.Button();
@@ -39,9 +39,11 @@
             this.tbxFile64 = new System.Windows.Forms.TextBox();
             this.btnOpenFile64 = new System.Windows.Forms.Button();
             this.lblFile64 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.tbxImage = new System.Windows.Forms.TextBox();
             this.btnOpenImage = new System.Windows.Forms.Button();
             this.lblImage = new System.Windows.Forms.Label();
+            this.btnAddPacket = new System.Windows.Forms.Button();
+            this.btnCancel = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // tbxName
@@ -69,12 +71,12 @@
             this.lblVersion.TabIndex = 2;
             this.lblVersion.Text = "Version: ";
             // 
-            // textBox1
+            // tbxVersion
             // 
-            this.textBox1.Location = new System.Drawing.Point(79, 33);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(94, 20);
-            this.textBox1.TabIndex = 3;
+            this.tbxVersion.Location = new System.Drawing.Point(79, 33);
+            this.tbxVersion.Name = "tbxVersion";
+            this.tbxVersion.Size = new System.Drawing.Size(94, 20);
+            this.tbxVersion.TabIndex = 3;
             // 
             // lblFile32
             // 
@@ -132,12 +134,12 @@
             this.lblFile64.TabIndex = 7;
             this.lblFile64.Text = "File (64Bit*):";
             // 
-            // textBox4
+            // tbxImage
             // 
-            this.textBox4.Location = new System.Drawing.Point(79, 102);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(239, 20);
-            this.textBox4.TabIndex = 12;
+            this.tbxImage.Location = new System.Drawing.Point(79, 102);
+            this.tbxImage.Name = "tbxImage";
+            this.tbxImage.Size = new System.Drawing.Size(239, 20);
+            this.tbxImage.TabIndex = 12;
             // 
             // btnOpenImage
             // 
@@ -158,12 +160,34 @@
             this.lblImage.TabIndex = 10;
             this.lblImage.Text = "Image: ";
             // 
+            // btnAddPacket
+            // 
+            this.btnAddPacket.Location = new System.Drawing.Point(12, 128);
+            this.btnAddPacket.Name = "btnAddPacket";
+            this.btnAddPacket.Size = new System.Drawing.Size(88, 23);
+            this.btnAddPacket.TabIndex = 13;
+            this.btnAddPacket.Text = "Confirm";
+            this.btnAddPacket.UseVisualStyleBackColor = true;
+            this.btnAddPacket.Click += new System.EventHandler(this.btnAddPacket_Click);
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.Location = new System.Drawing.Point(106, 128);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(93, 23);
+            this.btnCancel.TabIndex = 14;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
             // NewPacketForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(407, 171);
-            this.Controls.Add(this.textBox4);
+            this.ClientSize = new System.Drawing.Size(407, 158);
+            this.Controls.Add(this.btnCancel);
+            this.Controls.Add(this.btnAddPacket);
+            this.Controls.Add(this.tbxImage);
             this.Controls.Add(this.btnOpenImage);
             this.Controls.Add(this.lblImage);
             this.Controls.Add(this.tbxFile64);
@@ -172,7 +196,7 @@
             this.Controls.Add(this.tbxFile32);
             this.Controls.Add(this.btnOpenFile32);
             this.Controls.Add(this.lblFile32);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.tbxVersion);
             this.Controls.Add(this.lblVersion);
             this.Controls.Add(this.lblName);
             this.Controls.Add(this.tbxName);
@@ -189,7 +213,7 @@
         private System.Windows.Forms.TextBox tbxName;
         private System.Windows.Forms.Label lblName;
         private System.Windows.Forms.Label lblVersion;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox tbxVersion;
         private System.Windows.Forms.Label lblFile32;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.Button btnOpenFile32;
@@ -197,8 +221,10 @@
         private System.Windows.Forms.TextBox tbxFile64;
         private System.Windows.Forms.Button btnOpenFile64;
         private System.Windows.Forms.Label lblFile64;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox tbxImage;
         private System.Windows.Forms.Button btnOpenImage;
         private System.Windows.Forms.Label lblImage;
+        private System.Windows.Forms.Button btnAddPacket;
+        private System.Windows.Forms.Button btnCancel;
     }
 }

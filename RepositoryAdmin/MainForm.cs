@@ -24,7 +24,10 @@ namespace RepositoryAdmin
 
         private void newPacketToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            NewPacketForm npf = new NewPacketForm();
+            npf.Show();
+            Packet newPacket = npf.NewPacket;
+            CreateNewPacket(newPacket);
         }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
@@ -32,7 +35,12 @@ namespace RepositoryAdmin
             Application.Exit();
         }
 
-        private void CreateNewPacket()
+        private void CreateNewPacket(Packet p)
+        {
+
+        }
+
+        private void changeToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
         }

@@ -20,11 +20,10 @@ namespace RepositoryAdmin
             this.Image = node.Attributes["Image"].InnerText;
         }
 
-        public Packet(string name, string version, string folder, string file32, string file64, string image)
+        public Packet(string name, string version, string file32, string file64, string image)
         {
             this.Name = name;
             this.Version = version;
-            this.Folder = folder;
             this.File32 = file32;
             this.File64 = file64;
             this.Image = image;
@@ -33,43 +32,43 @@ namespace RepositoryAdmin
         public string Name
         {
             get;
-            private set;
+            set;
         }
 
         public string Version
         {
             get;
-            private set;
+            set;
         }
 
         public string Folder
         {
             get;
-            private set;
+            set;
         }
 
         public string Category
         {
             get;
-            private set;
+            set;
         }
 
         public string File32
         {
             get;
-            private set;
+            set;
         }
 
         public string File64
         {
             get;
-            private set;
+            set;
         }
 
         public string Image
         {
             get;
-            private set;
+            set;
         }
     }
 }
