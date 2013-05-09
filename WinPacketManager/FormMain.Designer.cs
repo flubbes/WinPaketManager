@@ -34,8 +34,8 @@
             this.gbPackets = new System.Windows.Forms.GroupBox();
             this.lbLog = new System.Windows.Forms.ListBox();
             this.lbCategories = new System.Windows.Forms.ListBox();
-            this.bvPackets = new WinPacketManager.Lib.Controls.ButtonView();
             this.gbCategories = new System.Windows.Forms.GroupBox();
+            this.bvPackets = new WinPacketManager.Lib.Controls.ButtonView();
             this.menuStrip1.SuspendLayout();
             this.gbPackets.SuspendLayout();
             this.gbCategories.SuspendLayout();
@@ -57,6 +57,7 @@
             this.repositoriesToolStripMenuItem.Name = "repositoriesToolStripMenuItem";
             this.repositoriesToolStripMenuItem.Size = new System.Drawing.Size(83, 20);
             this.repositoriesToolStripMenuItem.Text = "Repositories";
+            this.repositoriesToolStripMenuItem.Click += new System.EventHandler(this.repositoriesToolStripMenuItem_Click);
             // 
             // updateToolStripMenuItem
             // 
@@ -94,6 +95,18 @@
             this.lbCategories.Name = "lbCategories";
             this.lbCategories.Size = new System.Drawing.Size(164, 203);
             this.lbCategories.TabIndex = 4;
+            this.lbCategories.SelectedIndexChanged += new System.EventHandler(this.lbCategories_SelectedIndexChanged);
+            // 
+            // gbCategories
+            // 
+            this.gbCategories.Controls.Add(this.lbCategories);
+            this.gbCategories.Dock = System.Windows.Forms.DockStyle.Left;
+            this.gbCategories.Location = new System.Drawing.Point(0, 24);
+            this.gbCategories.Name = "gbCategories";
+            this.gbCategories.Size = new System.Drawing.Size(170, 222);
+            this.gbCategories.TabIndex = 5;
+            this.gbCategories.TabStop = false;
+            this.gbCategories.Text = "Categories";
             // 
             // bvPackets
             // 
@@ -107,17 +120,6 @@
             this.bvPackets.Size = new System.Drawing.Size(651, 203);
             this.bvPackets.TabIndex = 0;
             this.bvPackets.ButtonClick += new WinPacketManager.Lib.Controls.ButtonView.ButtonViewClickEventHandler(this.bvPackets_ButtonClick);
-            // 
-            // gbCategories
-            // 
-            this.gbCategories.Controls.Add(this.lbCategories);
-            this.gbCategories.Dock = System.Windows.Forms.DockStyle.Left;
-            this.gbCategories.Location = new System.Drawing.Point(0, 24);
-            this.gbCategories.Name = "gbCategories";
-            this.gbCategories.Size = new System.Drawing.Size(170, 222);
-            this.gbCategories.TabIndex = 5;
-            this.gbCategories.TabStop = false;
-            this.gbCategories.Text = "Categories";
             // 
             // FormMain
             // 

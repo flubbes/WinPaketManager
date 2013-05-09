@@ -9,7 +9,7 @@ namespace WinPacketManager.Lib.Objects
 {
     public class Packet
     {
-        public Packet(XmlNode node)
+        public Packet(XmlNode node, Repository referencedRepository)
         {
             this.Name = node.Attributes["Name"].InnerText;
             this.Version = node.Attributes["Version"].InnerText;
@@ -18,6 +18,7 @@ namespace WinPacketManager.Lib.Objects
             this.File32 = node.Attributes["File32"].InnerText;
             this.File64 = node.Attributes["File64"].InnerText;
             this.Image = node.Attributes["Image"].InnerText;
+            this.ReferencedRepository = referencedRepository;
         }
 
         public string Name
@@ -60,6 +61,12 @@ namespace WinPacketManager.Lib.Objects
         {
             get;
             private set;
+        }
+
+        public Repository ReferencedRepository
+        {
+            get;
+            set;
         }
     }
 }
