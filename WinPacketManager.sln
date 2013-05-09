@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Express 2012 for Windows Desktop
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinPaketManager", "WinPaketManager\WinPaketManager.csproj", "{E3EF49BB-8414-4C3F-9FBE-7CB804445C37}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinPacketManager", "WinPacketManager\WinPacketManager.csproj", "{E3EF49BB-8414-4C3F-9FBE-7CB804445C37}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RepositoryAdmin", "RepositoryAdmin\RepositoryAdmin.csproj", "{02B1E858-5C6A-4ABF-A261-FE00A14A4B32}"
 EndProject
