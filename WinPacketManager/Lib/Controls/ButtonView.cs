@@ -27,6 +27,8 @@ namespace WinPacketManager.Lib.Controls
             MinimumButtonHeight = 100;
             MinimumButtonWidth = 100;
             this.Refresh();
+            this.VerticalScroll.Enabled = true;
+            this.VerticalScroll.Visible = true;
         }
 
         /// <summary>
