@@ -1,0 +1,9 @@
+E:\Eigene Dateien\Eigene Dokumente\GitHub\WinPaketManager\RepositoryAdmin\obj\Debug\RepositoryAdmin.csprojResolveAssemblyReference.cache
+E:\Eigene Dateien\Eigene Dokumente\GitHub\WinPaketManager\RepositoryAdmin\obj\Debug\RepositoryAdmin.MainForm.resources
+E:\Eigene Dateien\Eigene Dokumente\GitHub\WinPaketManager\RepositoryAdmin\obj\Debug\RepositoryAdmin.Properties.Resources.resources
+E:\Eigene Dateien\Eigene Dokumente\GitHub\WinPaketManager\RepositoryAdmin\obj\Debug\RepositoryAdmin.csproj.GenerateResource.Cache
+E:\Eigene Dateien\Eigene Dokumente\GitHub\WinPaketManager\RepositoryAdmin\bin\Debug\RepositoryAdmin.exe.config
+E:\Eigene Dateien\Eigene Dokumente\GitHub\WinPaketManager\RepositoryAdmin\bin\Debug\RepositoryAdmin.exe
+E:\Eigene Dateien\Eigene Dokumente\GitHub\WinPaketManager\RepositoryAdmin\bin\Debug\RepositoryAdmin.pdb
+E:\Eigene Dateien\Eigene Dokumente\GitHub\WinPaketManager\RepositoryAdmin\obj\Debug\RepositoryAdmin.exe
+E:\Eigene Dateien\Eigene Dokumente\GitHub\WinPaketManager\RepositoryAdmin\obj\Debug\RepositoryAdmin.pdb
