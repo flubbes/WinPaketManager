@@ -21,10 +21,8 @@ namespace WinPacketManager
         public FormMain()
         {
             InitializeComponent();
-
-            //InitializeLog
             Logging.NewLog += Logging_NewLog;
-
+            categories = new List<string>();
             repositories = new List<Repository>();
         }
 
@@ -44,6 +42,25 @@ namespace WinPacketManager
         {
             repositories.Add(new Repository("http://outcast-prophets.no-ip.org/rep/"));
             updateToolStripMenuItem.PerformClick();
+            if (lbCategories.Items.Count > 0)
+                lbCategories.SelectedIndex = 0;
+        }
+
+        private void AddCategory(string cat)
+        {
+            foreach (string catName in categories)
+                if (catName == cat)
+                    return;
+            categories.Add(cat);
+            categories.Sort();
+            RefreshCategoryListBox();
+        }
+
+        private void RefreshCategoryListBox()
+        {
+            lbCategories.Items.Clear();
+            foreach (string catName in categories)
+                lbCategories.Items.Add(catName);
         }
 
         private void updateToolStripMenuItem_Click(object sender, EventArgs e)
@@ -61,34 +78,54 @@ namespace WinPacketManager
                 }
                 foreach (Packet p in rep.Packets)
                 {
+                    AddCategory(p.Category);
                     Logging.Log("Added {0}", p.Name);
-                    ButtonViewButton bvb = new ButtonViewButton(p.Name);
-                    bvb.Image = repositories[0].GetImageFromPacket(p);
-                    bvPackets.Items.Add(bvb);
                 }
             }
-            //bvPackets.Invalidate();
+            bvPackets.Invalidate();
         }
 
         private Packet GetPacketByName(string name)
         {
             foreach (Repository rep in repositories)
-            {
                 foreach (Packet p in rep.Packets)
-                {
-                    if (p.Name == name)
-                    {
-                        return p;
-                    }
-                }
-            }
+                    if (p.Name == name) return p;
             Logging.Log("Packet {0} not found", name);
             return null;
         }
 
+        private Packet[] GetPacketsFromCategory(string catName)
+        {
+            List<Packet> result = new List<Packet>();
+            foreach (Repository rep in repositories)
+                foreach (Packet p in rep.Packets)
+                    if (p.Category == catName)
+                        result.Add(p);
+            return result.ToArray();
+        }
+
         private void bvPackets_ButtonClick(ButtonViewClickEventArgs e)
         {
+        
+        }
 
+        private void lbCategories_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            bvPackets.Items.Clear();
+            Packet[] packets = GetPacketsFromCategory((string)lbCategories.SelectedItem);
+            foreach (Packet p in packets)
+            {
+                ButtonViewButton bvb = new ButtonViewButton(p.Name);
+                bvb.Image = p.ReferencedRepository.GetImageFromPacket(p);
+                bvPackets.Items.Add(bvb);
+            }
+            bvPackets.Invalidate();
+        }
+
+        private void repositoriesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormRepositoryManager frm = new FormRepositoryManager(ref repositories);
+            frm.ShowDialog();
         }
     }
 }

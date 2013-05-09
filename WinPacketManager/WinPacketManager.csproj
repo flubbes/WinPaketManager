@@ -69,6 +69,12 @@
     <Compile Include="FormMain.Designer.cs">
       <DependentUpon>FormMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormRepositoryManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormRepositoryManager.Designer.cs">
+      <DependentUpon>FormRepositoryManager.cs</DependentUpon>
+    </Compile>
     <Compile Include="Lib\Controls\ButtonView.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -88,6 +94,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormRepositoryManager.resx">
+      <DependentUpon>FormRepositoryManager.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Lib\Controls\ButtonView.resx">
       <DependentUpon>ButtonView.cs</DependentUpon>

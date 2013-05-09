@@ -17,3 +17,4 @@ C:\Users\FABIAN\Documents\GitHub\WinPaketManager\WinPacketManager\obj\Debug\WinP
 C:\Users\FABIAN\Documents\GitHub\WinPaketManager\WinPacketManager\obj\Debug\WinPacketManager.Lib.Controls.ButtonView.resources
 C:\Users\FABIAN\Documents\GitHub\WinPaketManager\WinPacketManager\obj\Debug\WinPacketManager.Properties.Resources.resources
 C:\Users\FABIAN\Documents\GitHub\WinPaketManager\WinPacketManager\obj\Debug\WinPacketManager.csproj.GenerateResource.Cache
+C:\Users\FABIAN\Documents\GitHub\WinPaketManager\WinPacketManager\obj\Debug\WinPacketManager.FormRepositoryManager.resources
