@@ -18,7 +18,8 @@ namespace WinPaketManager.Lib.Controls
             Font = new Font(FontFamily.GenericMonospace, 10.0f);
             TextBrush = Brushes.Black;
             this.Caption = caption;
-            this.Style = ButtonViewButtonStyle.RectangleImageWithText;
+            this.Style = ButtonViewButtonStyle.EllipseImageWithText;
+            this.BorderWidth = 1;
         }
 
         /// <summary>
@@ -59,6 +60,9 @@ namespace WinPaketManager.Lib.Controls
             }
         }
 
+        /// <summary>
+        /// The BorderWith of the Button
+        /// </summary>
         public int BorderWidth
         {
             get;
@@ -101,7 +105,10 @@ namespace WinPaketManager.Lib.Controls
             {
                 case (ButtonViewButtonStyle.RectangleTextOnly):
                     {
-                        g.DrawRectangle(Pen, HitBox);
+                        if (BorderWidth > 0)
+                        {
+                            g.DrawRectangle(Pen, HitBox);
+                        }
                         SizeF stringSize = g.MeasureString(Caption, Font);
                         float distanceToBorderHorizontal = (HitBox.Width - stringSize.Width) / 2;
                         float distanceToBorderVertical = (HitBox.Height - stringSize.Height) / 2;
@@ -114,7 +121,10 @@ namespace WinPaketManager.Lib.Controls
                     break;
                 case (ButtonViewButtonStyle.EllipseTextOnly):
                     {
-                        g.DrawEllipse(Pen, HitBox);
+                        if (BorderWidth > 0)
+                        {
+                            g.DrawEllipse(Pen, HitBox);
+                        }
                         SizeF stringSize = g.MeasureString(Caption, Font);
                         float distanceToBorderHorizontal = (HitBox.Width - stringSize.Width) / 2;
                         float distanceToBorderVertical = (HitBox.Height - stringSize.Height) / 2;
@@ -127,7 +137,10 @@ namespace WinPaketManager.Lib.Controls
                     break;
                 case (ButtonViewButtonStyle.EllipseImageOnly):
                     {
-                         g.DrawEllipse(Pen, HitBox);
+                        if (BorderWidth > 0)
+                        {
+                            g.DrawEllipse(Pen, HitBox);
+                        }
                          if (this.Image != null)
                          {
                              g.DrawImage(this.Image, new Rectangle((int)(HitBox.X + (0.2 * HitBox.Width)), (int)(HitBox.Y + (0.2 * HitBox.Height)), (int)(HitBox.Width - (0.4 * HitBox.Width)), (int)(HitBox.Height - (0.4 * HitBox.Height))));
@@ -136,7 +149,10 @@ namespace WinPaketManager.Lib.Controls
                     break;
                 case (ButtonViewButtonStyle.EllipseImageWithText):
                     {
-                         g.DrawEllipse(Pen, HitBox);
+                        if (BorderWidth > 0)
+                        {
+                            g.DrawEllipse(Pen, HitBox);
+                        }
                          SizeF stringSize = g.MeasureString(Caption, Font);
                          Rectangle pictureRectangle = new Rectangle((int)(HitBox.X + (0.3 * HitBox.Width)), (int)(HitBox.Y + (0.3 * HitBox.Height) - stringSize.Height), (int)(HitBox.Width - (0.6 * HitBox.Width)), (int)(HitBox.Height - (0.6 * HitBox.Height)));
                          if (this.Image != null)
@@ -151,7 +167,10 @@ namespace WinPaketManager.Lib.Controls
                     break;
                 case (ButtonViewButtonStyle.RectangleImageOnly):
                     {
-                        g.DrawRectangle(Pen, HitBox);
+                        if (BorderWidth > 0)
+                        {
+                            g.DrawRectangle(Pen, HitBox);
+                        }
                         if (this.Image != null)
                         {
                             g.DrawImage(this.Image, new Rectangle((int)(HitBox.X + (0.2 * HitBox.Width)), (int)(HitBox.Y + (0.2 * HitBox.Height)), (int)(HitBox.Width - (0.4 * HitBox.Width)), (int)(HitBox.Height - (0.4 * HitBox.Height))));
@@ -160,7 +179,10 @@ namespace WinPaketManager.Lib.Controls
                     break;
                 case (ButtonViewButtonStyle.RectangleImageWithText):
                     {
-                        g.DrawRectangle(Pen, HitBox);
+                        if (BorderWidth > 0)
+                        {
+                            g.DrawRectangle(Pen, HitBox);
+                        }
                         SizeF stringSize = g.MeasureString(Caption, Font);
                         Rectangle pictureRectangle = new Rectangle((int)(HitBox.X + (0.3 * HitBox.Width)), (int)(HitBox.Y + (0.3 * HitBox.Height) - stringSize.Height), (int)(HitBox.Width - (0.6 * HitBox.Width)), (int)(HitBox.Height - (0.6 * HitBox.Height)));
                         if (this.Image != null)

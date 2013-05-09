@@ -1,5 +1,4 @@
 C:\Users\Fabian\Documents\GitHub\WinPaketManager\WinPaketManager\bin\Debug\WinPaketManager.exe.config
-C:\Users\FABIAN\Documents\GitHub\WinPaketManager\WinPaketManager\obj\Debug\WinPaketManager.csprojResolveAssemblyReference.cache
 C:\Users\FABIAN\Documents\GitHub\WinPaketManager\WinPaketManager\obj\Debug\WinPaketManager.FormMain.resources
 C:\Users\FABIAN\Documents\GitHub\WinPaketManager\WinPaketManager\obj\Debug\WinPaketManager.Properties.Resources.resources
 C:\Users\FABIAN\Documents\GitHub\WinPaketManager\WinPaketManager\obj\Debug\WinPaketManager.csproj.GenerateResource.Cache
@@ -8,3 +7,4 @@ C:\Users\FABIAN\Documents\GitHub\WinPaketManager\WinPaketManager\bin\Debug\WinPa
 C:\Users\FABIAN\Documents\GitHub\WinPaketManager\WinPaketManager\bin\Debug\WinPaketManager.pdb
 C:\Users\FABIAN\Documents\GitHub\WinPaketManager\WinPaketManager\obj\Debug\WinPaketManager.exe
 C:\Users\FABIAN\Documents\GitHub\WinPaketManager\WinPaketManager\obj\Debug\WinPaketManager.pdb
+C:\Users\FABIAN\Documents\GitHub\WinPaketManager\WinPaketManager\obj\Debug\WinPaketManager.csprojResolveAssemblyReference.cache

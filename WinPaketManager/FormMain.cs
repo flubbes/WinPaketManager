@@ -8,31 +8,25 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WinPaketManager.Lib.Controls;
+using WinPaketManager.Lib.Objects;
 
 namespace WinPaketManager
 {
     public partial class FormMain : Form
     {
+        List<Repository> repositories;
         public FormMain()
         {
             InitializeComponent();
-            bvTopPakets.Items.Add(new ButtonViewButton("Paket1"));
-            bvTopPakets.Items.Add(new ButtonViewButton("Paket2"));
-            bvTopPakets.Items.Add(new ButtonViewButton("Paket3"));
-            bvTopPakets.Items.Add(new ButtonViewButton("Paket4"));
-            bvTopPakets.Items.Add(new ButtonViewButton("Paket5"));
-            bvTopPakets.Items.Add(new ButtonViewButton("Paket6"));
-            bvTopPakets.Items.Add(new ButtonViewButton("Paket7"));
-            bvTopPakets.Items.Add(new ButtonViewButton("Paket8"));
-            bvTopPakets.Items.Add(new ButtonViewButton("Paket9"));
-            bvTopPakets.Items.Add(new ButtonViewButton("Paket10"));
-            bvTopPakets.Items.Add(new ButtonViewButton("Paket11"));
-            bvTopPakets.Items.Add(new ButtonViewButton("Paket12"));
-            bvTopPakets.Items.Add(new ButtonViewButton("Paket13"));
-            bvTopPakets.Items.Add(new ButtonViewButton("Paket14"));
-            foreach (ButtonViewButton bvb in bvTopPakets.Items)
+            repositories = new List<Repository>();
+            repositories.Add(new Repository("http://outcast-prophets.no-ip.org/rep/"));
+            repositories[0].Update();
+
+            foreach (Paket p in repositories[0].Pakets)
             {
-                bvb.Image = Image.FromFile("7ziplogo.png");
+                ButtonViewButton bvb = new ButtonViewButton(p.Name);
+                bvb.Image = repositories[0].GetImageFromPaket(p);
+                bvTopPakets.Items.Add(bvb);
             }
         }
     }
