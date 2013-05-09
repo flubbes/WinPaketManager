@@ -50,6 +50,15 @@
     <Compile Include="FormMain.Designer.cs">
       <DependentUpon>FormMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="Lib\Controls\ButtonView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Lib\Controls\ButtonView.Designer.cs">
+      <DependentUpon>ButtonView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Lib\Controls\ButtonViewButton.cs" />
+    <Compile Include="Lib\Controls\ButtonViewButtonStyle.cs" />
+    <Compile Include="Lib\Controls\ButtonViewClickEventArgs.cs" />
     <Compile Include="Lib\Managers\Logging.cs" />
     <Compile Include="Lib\Objects\Paket.cs" />
     <Compile Include="Lib\Exceptions\PaketNotFoundException.cs" />
@@ -58,6 +67,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Lib\Controls\ButtonView.resx">
+      <DependentUpon>ButtonView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
