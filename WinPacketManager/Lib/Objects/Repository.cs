@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using System.Xml;
 using WinPacketManager.Lib.Exceptions;
 using WinPacketManager.Lib.Managers;
@@ -70,6 +72,52 @@ namespace WinPacketManager.Lib.Objects
                 if(node.Name == "Packet")
                     Packets.Add(new Packet(node,this));
             Logging.Log("Finished updating");
+        }
+
+        private void FolderRoutine()
+        {
+            if (!Directory.Exists(PreparePath("temp")))
+                Directory.CreateDirectory(PreparePath("temp"));
+        }
+
+        private string PreparePath(string path)
+        {
+            return Path.GetDirectoryName(Application.ExecutablePath) + "/" + path;
+        }
+
+        public void InstallPacket(Packet p, bool isX64)
+        {
+            string file = p.File32;
+            if(isX64)
+                file = p.File64;
+            Stream str = new WebClient().OpenRead(BuildUrl() + p.Folder + "/" + file);
+            FolderRoutine();
+            Stream wStr = File.Create(PreparePath("temp/" + file));
+
+            HttpWebRequest req = (HttpWebRequest)WebRequest.Create(BuildUrl() + p.Folder + "/" + file);
+            req.Method = "HEAD";
+            HttpWebResponse resp = (HttpWebResponse)req.GetResponse();
+            double len = resp.ContentLength;
+            req.Abort();
+            int b;
+            double byteCounter = 0;
+            double oldPercentage = 0;
+            while((b = str.ReadByte()) != -1)
+            {
+                wStr.WriteByte((byte)b);
+                byteCounter++;
+                double newPercentage = Math.Round(byteCounter * 100 / len, 0);
+                if(oldPercentage != newPercentage)
+                {
+                    Logging.Log("Downloading: {0}%", newPercentage);
+                    oldPercentage = newPercentage;
+                }
+            }
+            str.Flush();
+            str.Close();
+            wStr.Flush();
+            wStr.Close();
+            Process.Start(PreparePath("temp/" + file));
         }
 
         public Image GetImageFromPacket(Packet p)

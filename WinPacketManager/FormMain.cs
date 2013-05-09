@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WinPacketManager.Lib.Controls;
@@ -17,6 +18,7 @@ namespace WinPacketManager
     {
         List<Repository> repositories;
         List<string> categories;
+        string curLog;
 
         public FormMain()
         {
@@ -28,7 +30,16 @@ namespace WinPacketManager
 
         void Logging_NewLog(string logMessage)
         {
-            lbLog.Items.Add(logMessage);
+            curLog = logMessage;
+            if (this.InvokeRequired)
+                this.Invoke(new MethodInvoker(Log));
+            else
+                Log();
+        }
+
+        private void Log()
+        {
+            lbLog.Items.Add(curLog);
             lbLog.TopIndex = lbLog.Items.Count - 1;
         }
 
@@ -106,7 +117,15 @@ namespace WinPacketManager
 
         private void bvPackets_ButtonClick(ButtonViewClickEventArgs e)
         {
-        
+            Packet toInstall = GetPacketByName(e.Button.Caption);
+            try
+            {
+                new Thread(() => toInstall.ReferencedRepository.InstallPacket(toInstall, true)).Start();
+            }
+            catch(Exception ex)
+            {
+                 Logging.Log("{0}: {1}", ex.GetType(), ex.Message);
+            }
         }
 
         private void lbCategories_SelectedIndexChanged(object sender, EventArgs e)
