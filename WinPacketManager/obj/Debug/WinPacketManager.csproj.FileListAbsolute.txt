@@ -10,3 +10,10 @@ C:\Users\FABIAN\Documents\GitHub\WinPaketManager\WinPaketManager\obj\Debug\WinPa
 C:\Users\FABIAN\Documents\GitHub\WinPaketManager\WinPacketManager\bin\Debug\WinPacketManager.exe.config
 C:\Users\FABIAN\Documents\GitHub\WinPaketManager\WinPacketManager\obj\Debug\WinPacketManager.exe
 C:\Users\FABIAN\Documents\GitHub\WinPaketManager\WinPacketManager\obj\Debug\WinPacketManager.pdb
+C:\Users\FABIAN\Documents\GitHub\WinPaketManager\WinPacketManager\bin\Debug\WinPacketManager.exe
+C:\Users\FABIAN\Documents\GitHub\WinPaketManager\WinPacketManager\bin\Debug\WinPacketManager.pdb
+C:\Users\FABIAN\Documents\GitHub\WinPaketManager\WinPacketManager\obj\Debug\WinPacketManager.csprojResolveAssemblyReference.cache
+C:\Users\FABIAN\Documents\GitHub\WinPaketManager\WinPacketManager\obj\Debug\WinPacketManager.FormMain.resources
+C:\Users\FABIAN\Documents\GitHub\WinPaketManager\WinPacketManager\obj\Debug\WinPacketManager.Lib.Controls.ButtonView.resources
+C:\Users\FABIAN\Documents\GitHub\WinPaketManager\WinPacketManager\obj\Debug\WinPacketManager.Properties.Resources.resources
+C:\Users\FABIAN\Documents\GitHub\WinPaketManager\WinPacketManager\obj\Debug\WinPacketManager.csproj.GenerateResource.Cache

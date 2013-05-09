@@ -32,10 +32,13 @@
             this.repositoriesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.updateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gbPackets = new System.Windows.Forms.GroupBox();
-            this.bvPackets = new WinPacketManager.Lib.Controls.ButtonView();
             this.lbLog = new System.Windows.Forms.ListBox();
+            this.lbCategories = new System.Windows.Forms.ListBox();
+            this.bvPackets = new WinPacketManager.Lib.Controls.ButtonView();
+            this.gbCategories = new System.Windows.Forms.GroupBox();
             this.menuStrip1.SuspendLayout();
             this.gbPackets.SuspendLayout();
+            this.gbCategories.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -73,6 +76,25 @@
             this.gbPackets.TabStop = false;
             this.gbPackets.Text = "Packets";
             // 
+            // lbLog
+            // 
+            this.lbLog.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.lbLog.FormattingEnabled = true;
+            this.lbLog.Location = new System.Drawing.Point(0, 246);
+            this.lbLog.Name = "lbLog";
+            this.lbLog.Size = new System.Drawing.Size(830, 82);
+            this.lbLog.TabIndex = 3;
+            // 
+            // lbCategories
+            // 
+            this.lbCategories.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbCategories.FormattingEnabled = true;
+            this.lbCategories.Location = new System.Drawing.Point(3, 16);
+            this.lbCategories.MultiColumn = true;
+            this.lbCategories.Name = "lbCategories";
+            this.lbCategories.Size = new System.Drawing.Size(164, 203);
+            this.lbCategories.TabIndex = 4;
+            // 
             // bvPackets
             // 
             this.bvPackets.BorderWith = 0;
@@ -86,20 +108,23 @@
             this.bvPackets.TabIndex = 0;
             this.bvPackets.ButtonClick += new WinPacketManager.Lib.Controls.ButtonView.ButtonViewClickEventHandler(this.bvPackets_ButtonClick);
             // 
-            // lbLog
+            // gbCategories
             // 
-            this.lbLog.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.lbLog.FormattingEnabled = true;
-            this.lbLog.Location = new System.Drawing.Point(0, 246);
-            this.lbLog.Name = "lbLog";
-            this.lbLog.Size = new System.Drawing.Size(830, 82);
-            this.lbLog.TabIndex = 3;
+            this.gbCategories.Controls.Add(this.lbCategories);
+            this.gbCategories.Dock = System.Windows.Forms.DockStyle.Left;
+            this.gbCategories.Location = new System.Drawing.Point(0, 24);
+            this.gbCategories.Name = "gbCategories";
+            this.gbCategories.Size = new System.Drawing.Size(170, 222);
+            this.gbCategories.TabIndex = 5;
+            this.gbCategories.TabStop = false;
+            this.gbCategories.Text = "Categories";
             // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(830, 328);
+            this.Controls.Add(this.gbCategories);
             this.Controls.Add(this.gbPackets);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.lbLog);
@@ -113,6 +138,7 @@
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.gbPackets.ResumeLayout(false);
+            this.gbCategories.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -126,6 +152,8 @@
         private System.Windows.Forms.GroupBox gbPackets;
         private System.Windows.Forms.ListBox lbLog;
         private System.Windows.Forms.ToolStripMenuItem updateToolStripMenuItem;
+        private System.Windows.Forms.ListBox lbCategories;
+        private System.Windows.Forms.GroupBox gbCategories;
     }
 }
 

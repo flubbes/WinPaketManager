@@ -16,6 +16,8 @@ namespace WinPacketManager
     public partial class FormMain : Form
     {
         List<Repository> repositories;
+        List<string> categories;
+
         public FormMain()
         {
             InitializeComponent();
@@ -35,6 +37,7 @@ namespace WinPacketManager
         private void FormMain_Resize(object sender, EventArgs e)
         {
             gbPackets.Size = new Size((int)(this.ClientSize.Width * 0.8), this.ClientSize.Height);
+            gbCategories.Size = new Size((int)(this.ClientSize.Width * 0.2), this.ClientSize.Height);
         }
 
         private void FormMain_Shown(object sender, EventArgs e)

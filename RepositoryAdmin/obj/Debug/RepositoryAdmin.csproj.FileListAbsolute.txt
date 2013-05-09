@@ -1,0 +1,8 @@
+C:\Users\FABIAN\Documents\GitHub\WinPaketManager\RepositoryAdmin\bin\Debug\RepositoryAdmin.exe.config
+C:\Users\FABIAN\Documents\GitHub\WinPaketManager\RepositoryAdmin\bin\Debug\RepositoryAdmin.exe
+C:\Users\FABIAN\Documents\GitHub\WinPaketManager\RepositoryAdmin\bin\Debug\RepositoryAdmin.pdb
+C:\Users\FABIAN\Documents\GitHub\WinPaketManager\RepositoryAdmin\obj\Debug\RepositoryAdmin.csprojResolveAssemblyReference.cache
+C:\Users\FABIAN\Documents\GitHub\WinPaketManager\RepositoryAdmin\obj\Debug\RepositoryAdmin.Properties.Resources.resources
+C:\Users\FABIAN\Documents\GitHub\WinPaketManager\RepositoryAdmin\obj\Debug\RepositoryAdmin.csproj.GenerateResource.Cache
+C:\Users\FABIAN\Documents\GitHub\WinPaketManager\RepositoryAdmin\obj\Debug\RepositoryAdmin.exe
+C:\Users\FABIAN\Documents\GitHub\WinPaketManager\RepositoryAdmin\obj\Debug\RepositoryAdmin.pdb

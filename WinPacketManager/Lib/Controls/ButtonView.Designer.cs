@@ -35,7 +35,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Name = "ButtonView";
-            this.Size = new System.Drawing.Size(393, 92);
+            this.Size = new System.Drawing.Size(196, 138);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.ButtonView_Paint);
             this.MouseClick += new System.Windows.Forms.MouseEventHandler(this.ButtonView_MouseClick);
             this.Resize += new System.EventHandler(this.ButtonView_Resize);
