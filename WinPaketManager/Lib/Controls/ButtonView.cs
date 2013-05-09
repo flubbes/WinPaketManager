@@ -93,6 +93,8 @@ namespace WinPaketManager.Lib.Controls
                 }
             }
 
+            
+
             double itemCountHorizonzalDouble = availableWidth / minWidth;
             int itemCountHorizonzal = Convert.ToInt32(itemCountHorizonzalDouble);
             if (itemCountHorizonzal < 1)
@@ -100,7 +102,11 @@ namespace WinPaketManager.Lib.Controls
                 throw new ArgumentOutOfRangeException();
             }
 
-            int curX = 0;
+            int expectedWidth = (int)minWidth * itemCountHorizonzal;
+            int restWidth = availableWidth - expectedWidth;
+            int betweener = restWidth / itemCountHorizonzal;
+
+            int curX = betweener;
             int curY = 0;
             int itemCounter = 0;
             for (int i = 0; itemCounter < Items.Count; i++)
@@ -111,11 +117,11 @@ namespace WinPaketManager.Lib.Controls
                     {
                         Items[itemCounter].Location = new Point(curX, curY);
                         Items[itemCounter].Size = new System.Drawing.Size(Convert.ToInt32(minWidth), Convert.ToInt32(minWidth));
-                        curX += Convert.ToInt32(minWidth);
+                        curX += Convert.ToInt32(minWidth) + betweener;
                         itemCounter++;
                     }
                 }
-                curX = 0;
+                curX = betweener;
                 curY += Convert.ToInt32(minWidth);
             }
         }

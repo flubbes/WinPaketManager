@@ -18,8 +18,7 @@ namespace WinPaketManager.Lib.Controls
             Font = new Font(FontFamily.GenericMonospace, 10.0f);
             TextBrush = Brushes.Black;
             this.Caption = caption;
-            this.Style = ButtonViewButtonStyle.EllipseImageWithText;
-            this.BorderWidth = 1;
+            this.Style = ButtonViewButtonStyle.RectangleImageWithText;
         }
 
         /// <summary>
