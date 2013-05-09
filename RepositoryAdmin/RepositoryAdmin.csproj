@@ -50,11 +50,20 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="NewPacketForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewPacketForm.Designer.cs">
+      <DependentUpon>NewPacketForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Packet.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewPacketForm.resx">
+      <DependentUpon>NewPacketForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

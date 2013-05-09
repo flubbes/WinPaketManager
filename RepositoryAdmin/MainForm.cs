@@ -31,5 +31,11 @@ namespace RepositoryAdmin
         {
             Application.Exit();
         }
+
+        private void CreateNewPacket()
+        {
+
+        }
+
     }
 }

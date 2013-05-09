@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml;
 
-namespace WinPaketManager.Lib.Objects
+namespace RepositoryAdmin
 {
     public class Packet
     {
@@ -18,6 +18,16 @@ namespace WinPaketManager.Lib.Objects
             this.File32 = node.Attributes["File32"].InnerText;
             this.File64 = node.Attributes["File64"].InnerText;
             this.Image = node.Attributes["Image"].InnerText;
+        }
+
+        public Packet(string name, string version, string folder, string file32, string file64, string image)
+        {
+            this.Name = name;
+            this.Version = version;
+            this.Folder = folder;
+            this.File32 = file32;
+            this.File64 = file64;
+            this.Image = image;
         }
 
         public string Name
