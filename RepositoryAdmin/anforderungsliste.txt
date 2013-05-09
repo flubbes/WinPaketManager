@@ -1,0 +1,18 @@
+- so sauber wie nur geht
+- übersichtliche form
+- xml files per ftp (muss kein sftp) ansteuern und auf einem lokalen laufwerk
+- beim start des programms werden alle zu managenden repositories geladen
+- Paketredundanz vermeiden!
+- datei auswahl per openfiledialog (müssen .exe .msi oder .zip dateien sein siehe OpenFiledialog.Filter)
+
+funktionen
+- speichern button (menustrip z.B.)
+- log funktion (siehe winpaketmanager)
+- neues paket hinzufügen
+- pakete updaten (muss alle verknüpften files ersetzten)
+- pakete löschen
+
+klassen beispiele
+Repository
+ - FtpConnection
+Paket
