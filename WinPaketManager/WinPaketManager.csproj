@@ -50,10 +50,10 @@
     <Compile Include="FormMain.Designer.cs">
       <DependentUpon>FormMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="Lib\Logging.cs" />
-    <Compile Include="Lib\Paket.cs" />
-    <Compile Include="Lib\PaketNotFoundException.cs" />
-    <Compile Include="Lib\Repository.cs" />
+    <Compile Include="Lib\Managers\Logging.cs" />
+    <Compile Include="Lib\Objects\Paket.cs" />
+    <Compile Include="Lib\Exceptions\PaketNotFoundException.cs" />
+    <Compile Include="Lib\Objects\Repository.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FormMain.resx">

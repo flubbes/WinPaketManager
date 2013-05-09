@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WinPaketManager.Lib
+namespace WinPaketManager.Lib.Managers
 {
     public class Logging
     {

@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WinPaketManager.Lib.Exceptions;
 
-namespace WinPaketManager.Lib
+namespace WinPaketManager.Lib.Objects
 {
     public class Repository
     {
