@@ -68,12 +68,13 @@ namespace WinPacketManager.Lib.Objects
             Logging.Log("Gathering pakets...");
             foreach (XmlNode node in paketNode)
                 if(node.Name == "Packet")
-                    Packets.Add(new Packet(node));
+                    Packets.Add(new Packet(node,this));
             Logging.Log("Finished updating");
         }
 
         public Image GetImageFromPacket(Packet p)
         {
+            Logging.Log("Reading image stream from {0}", p.Name);
             return Image.FromStream(new WebClient().OpenRead(BuildUrl() + p.Folder + "/" + p.Image));
         }
 
