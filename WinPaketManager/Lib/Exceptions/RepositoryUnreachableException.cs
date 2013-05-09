@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using WinPaketManager.Lib.Objects;
+using WinPacketManager.Lib.Objects;
 
-namespace WinPaketManager.Lib.Exceptions
+namespace WinPacketManager.Lib.Exceptions
 {
     public class RepositoryUnreachableException : Exception
     {

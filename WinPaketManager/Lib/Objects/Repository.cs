@@ -7,10 +7,10 @@ using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml;
-using WinPaketManager.Lib.Exceptions;
-using WinPaketManager.Lib.Managers;
+using WinPacketManager.Lib.Exceptions;
+using WinPacketManager.Lib.Managers;
 
-namespace WinPaketManager.Lib.Objects
+namespace WinPacketManager.Lib.Objects
 {
     public class Repository
     {
@@ -19,7 +19,7 @@ namespace WinPaketManager.Lib.Objects
         public Repository(string address)
         {
             this.Address = address;
-            this.Pakets = new List<Paket>();
+            this.Packets = new List<Packet>();
         }
 
         public string Address
@@ -28,7 +28,7 @@ namespace WinPaketManager.Lib.Objects
             private set;
         }
 
-        public List<Paket> Pakets
+        public List<Packet> Packets
         {
             get;
             private set;
@@ -60,29 +60,29 @@ namespace WinPaketManager.Lib.Objects
             if (!doc.HasChildNodes) throw new EmptyRepositoryException(this);
             XmlNode paketNode = null;
             foreach (XmlNode node in doc.ChildNodes)
-                if (node.Name == "Pakets")
+                if (node.Name == "Packets")
                     paketNode = node;
             Logging.Log("Repository contains {0} pakets", paketNode.ChildNodes.Count);
-            Logging.Log("Deleting old Pakets");
-            Pakets.Clear();
+            Logging.Log("Deleting old Packets");
+            Packets.Clear();
             Logging.Log("Gathering pakets...");
             foreach (XmlNode node in paketNode)
-                if(node.Name == "Paket")
-                    Pakets.Add(new Paket(node));
+                if(node.Name == "Packet")
+                    Packets.Add(new Packet(node));
             Logging.Log("Finished updating");
         }
 
-        public Image GetImageFromPaket(Paket p)
+        public Image GetImageFromPacket(Packet p)
         {
             return Image.FromStream(new WebClient().OpenRead(BuildUrl() + p.Folder + "/" + p.Image));
         }
 
-        public Paket GetPaket(string paketName)
+        public Packet GetPacket(string paketName)
         {
-            foreach (Paket p in Pakets)
+            foreach (Packet p in Packets)
                 if (p.Name == paketName)
                     return p;
-            throw new PaketNotFoundException(paketName);
+            throw new PacketNotFoundException(paketName);
         }
     }
 }

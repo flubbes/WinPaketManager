@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WinPaketManager.Lib.Controls
+namespace WinPacketManager.Lib.Controls
 {
     /// <summary>
     /// A class containing a button for the ButtonView UserControl

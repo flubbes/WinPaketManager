@@ -5,11 +5,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml;
 
-namespace WinPaketManager.Lib.Objects
+namespace WinPacketManager.Lib.Objects
 {
-    public class Paket
+    public class Packet
     {
-        public Paket(XmlNode node)
+        public Packet(XmlNode node)
         {
             this.Name = node.Attributes["Name"].InnerText;
             this.Version = node.Attributes["Version"].InnerText;

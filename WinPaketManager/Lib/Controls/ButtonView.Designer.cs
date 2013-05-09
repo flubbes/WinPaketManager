@@ -1,4 +1,4 @@
-﻿namespace WinPaketManager.Lib.Controls
+﻿namespace WinPacketManager.Lib.Controls
 {
     partial class ButtonView
     {

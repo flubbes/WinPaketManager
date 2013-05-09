@@ -7,11 +7,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using WinPaketManager.Lib.Controls;
-using WinPaketManager.Lib.Managers;
-using WinPaketManager.Lib.Objects;
+using WinPacketManager.Lib.Controls;
+using WinPacketManager.Lib.Managers;
+using WinPacketManager.Lib.Objects;
 
-namespace WinPaketManager
+namespace WinPacketManager
 {
     public partial class FormMain : Form
     {
@@ -34,7 +34,7 @@ namespace WinPaketManager
 
         private void FormMain_Resize(object sender, EventArgs e)
         {
-            gbPakets.Size = new Size((int)(this.ClientSize.Width * 0.8), this.ClientSize.Height);
+            gbPackets.Size = new Size((int)(this.ClientSize.Width * 0.8), this.ClientSize.Height);
         }
 
         private void FormMain_Shown(object sender, EventArgs e)
@@ -45,7 +45,7 @@ namespace WinPaketManager
 
         private void updateToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            bvPakets.Items.Clear();
+            bvPackets.Items.Clear();
             foreach (Repository rep in repositories)
             {
                 try
@@ -56,22 +56,22 @@ namespace WinPaketManager
                 {
                     Logging.Log("{0}: {1}", ex.GetType(), ex.Message);
                 }
-                foreach (Paket p in rep.Pakets)
+                foreach (Packet p in rep.Packets)
                 {
                     Logging.Log("Added {0}", p.Name);
                     ButtonViewButton bvb = new ButtonViewButton(p.Name);
-                    bvb.Image = repositories[0].GetImageFromPaket(p);
-                    bvPakets.Items.Add(bvb);
+                    bvb.Image = repositories[0].GetImageFromPacket(p);
+                    bvPackets.Items.Add(bvb);
                 }
             }
-            //bvPakets.Invalidate();
+            //bvPackets.Invalidate();
         }
 
-        private Paket GetPaketByName(string name)
+        private Packet GetPacketByName(string name)
         {
             foreach (Repository rep in repositories)
             {
-                foreach (Paket p in rep.Pakets)
+                foreach (Packet p in rep.Packets)
                 {
                     if (p.Name == name)
                     {
@@ -79,11 +79,11 @@ namespace WinPaketManager
                     }
                 }
             }
-            Logging.Log("Paket {0} not found", name);
+            Logging.Log("Packet {0} not found", name);
             return null;
         }
 
-        private void bvPakets_ButtonClick(ButtonViewClickEventArgs e)
+        private void bvPackets_ButtonClick(ButtonViewClickEventArgs e)
         {
 
         }

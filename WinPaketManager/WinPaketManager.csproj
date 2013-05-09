@@ -7,8 +7,8 @@
     <ProjectGuid>{E3EF49BB-8414-4C3F-9FBE-7CB804445C37}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>WinPaketManager</RootNamespace>
-    <AssemblyName>WinPaketManager</AssemblyName>
+    <RootNamespace>WinPacketManager</RootNamespace>
+    <AssemblyName>WinPacketManager</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <PublishUrl>veröffentlichen\</PublishUrl>
@@ -77,7 +77,7 @@
     <Compile Include="Lib\Exceptions\EmptyRepositoryException.cs" />
     <Compile Include="Lib\Exceptions\RepositoryUnreachableException.cs" />
     <Compile Include="Lib\Managers\Logging.cs" />
-    <Compile Include="Lib\Objects\Paket.cs" />
+    <Compile Include="Lib\Objects\Packet.cs" />
     <Compile Include="Lib\Exceptions\PaketNotFoundException.cs" />
     <Compile Include="Lib\Objects\Repository.cs" />
     <Compile Include="Program.cs" />
@@ -96,6 +96,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

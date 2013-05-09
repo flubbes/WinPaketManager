@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WinPaketManager.Lib.Controls
+namespace WinPacketManager.Lib.Controls
 {
     public class ButtonViewClickEventArgs : EventArgs
     {

@@ -4,16 +4,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WinPaketManager.Lib.Exceptions
+namespace WinPacketManager.Lib.Exceptions
 {
-    public class PaketNotFoundException : KeyNotFoundException
+    public class PacketNotFoundException : KeyNotFoundException
     {
-        public PaketNotFoundException(string paketName)
+        public PacketNotFoundException(string paketName)
         {
-            this.PaketName = paketName;
+            this.PacketName = paketName;
         }
 
-        public string PaketName
+        public string PacketName
         {
             get;
             private set;

@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace WinPaketManager.Lib.Controls
+namespace WinPacketManager.Lib.Controls
 {
     /// <summary>
     /// A view to show some buttons in the form

@@ -1,4 +1,4 @@
-﻿namespace WinPaketManager
+﻿namespace WinPacketManager
 {
     partial class FormMain
     {
@@ -30,12 +30,12 @@
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.repositoriesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.gbPakets = new System.Windows.Forms.GroupBox();
-            this.lbLog = new System.Windows.Forms.ListBox();
             this.updateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.bvPakets = new WinPaketManager.Lib.Controls.ButtonView();
+            this.gbPackets = new System.Windows.Forms.GroupBox();
+            this.bvPackets = new WinPacketManager.Lib.Controls.ButtonView();
+            this.lbLog = new System.Windows.Forms.ListBox();
             this.menuStrip1.SuspendLayout();
-            this.gbPakets.SuspendLayout();
+            this.gbPackets.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -55,16 +55,36 @@
             this.repositoriesToolStripMenuItem.Size = new System.Drawing.Size(83, 20);
             this.repositoriesToolStripMenuItem.Text = "Repositories";
             // 
-            // gbPakets
+            // updateToolStripMenuItem
             // 
-            this.gbPakets.Controls.Add(this.bvPakets);
-            this.gbPakets.Dock = System.Windows.Forms.DockStyle.Right;
-            this.gbPakets.Location = new System.Drawing.Point(173, 24);
-            this.gbPakets.Name = "gbPakets";
-            this.gbPakets.Size = new System.Drawing.Size(657, 222);
-            this.gbPakets.TabIndex = 2;
-            this.gbPakets.TabStop = false;
-            this.gbPakets.Text = "Pakets";
+            this.updateToolStripMenuItem.Name = "updateToolStripMenuItem";
+            this.updateToolStripMenuItem.Size = new System.Drawing.Size(57, 20);
+            this.updateToolStripMenuItem.Text = "Update";
+            this.updateToolStripMenuItem.Click += new System.EventHandler(this.updateToolStripMenuItem_Click);
+            // 
+            // gbPackets
+            // 
+            this.gbPackets.Controls.Add(this.bvPackets);
+            this.gbPackets.Dock = System.Windows.Forms.DockStyle.Right;
+            this.gbPackets.Location = new System.Drawing.Point(173, 24);
+            this.gbPackets.Name = "gbPackets";
+            this.gbPackets.Size = new System.Drawing.Size(657, 222);
+            this.gbPackets.TabIndex = 2;
+            this.gbPackets.TabStop = false;
+            this.gbPackets.Text = "Packets";
+            // 
+            // bvPackets
+            // 
+            this.bvPackets.BorderWith = 0;
+            this.bvPackets.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.bvPackets.Location = new System.Drawing.Point(3, 16);
+            this.bvPackets.MinimumButtonHeight = 100;
+            this.bvPackets.MinimumButtonWidth = 100;
+            this.bvPackets.Name = "bvPackets";
+            this.bvPackets.ShowBorder = true;
+            this.bvPackets.Size = new System.Drawing.Size(651, 203);
+            this.bvPackets.TabIndex = 0;
+            this.bvPackets.ButtonClick += new WinPacketManager.Lib.Controls.ButtonView.ButtonViewClickEventHandler(this.bvPackets_ButtonClick);
             // 
             // lbLog
             // 
@@ -75,44 +95,24 @@
             this.lbLog.Size = new System.Drawing.Size(830, 82);
             this.lbLog.TabIndex = 3;
             // 
-            // updateToolStripMenuItem
-            // 
-            this.updateToolStripMenuItem.Name = "updateToolStripMenuItem";
-            this.updateToolStripMenuItem.Size = new System.Drawing.Size(57, 20);
-            this.updateToolStripMenuItem.Text = "Update";
-            this.updateToolStripMenuItem.Click += new System.EventHandler(this.updateToolStripMenuItem_Click);
-            // 
-            // bvPakets
-            // 
-            this.bvPakets.BorderWith = 0;
-            this.bvPakets.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.bvPakets.Location = new System.Drawing.Point(3, 16);
-            this.bvPakets.MinimumButtonHeight = 100;
-            this.bvPakets.MinimumButtonWidth = 100;
-            this.bvPakets.Name = "bvPakets";
-            this.bvPakets.ShowBorder = true;
-            this.bvPakets.Size = new System.Drawing.Size(651, 203);
-            this.bvPakets.TabIndex = 0;
-            this.bvPakets.ButtonClick += new WinPaketManager.Lib.Controls.ButtonView.ButtonViewClickEventHandler(this.bvPakets_ButtonClick);
-            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(830, 328);
-            this.Controls.Add(this.gbPakets);
+            this.Controls.Add(this.gbPackets);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.lbLog);
             this.Cursor = System.Windows.Forms.Cursors.Default;
             this.MainMenuStrip = this.menuStrip1;
             this.MinimumSize = new System.Drawing.Size(846, 367);
             this.Name = "FormMain";
-            this.Text = "WinPaketManager";
+            this.Text = "WinPacketManager";
             this.Shown += new System.EventHandler(this.FormMain_Shown);
             this.Resize += new System.EventHandler(this.FormMain_Resize);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            this.gbPakets.ResumeLayout(false);
+            this.gbPackets.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -120,10 +120,10 @@
 
         #endregion
 
-        private Lib.Controls.ButtonView bvPakets;
+        private Lib.Controls.ButtonView bvPackets;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem repositoriesToolStripMenuItem;
-        private System.Windows.Forms.GroupBox gbPakets;
+        private System.Windows.Forms.GroupBox gbPackets;
         private System.Windows.Forms.ListBox lbLog;
         private System.Windows.Forms.ToolStripMenuItem updateToolStripMenuItem;
     }
