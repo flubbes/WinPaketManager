@@ -18,7 +18,7 @@ namespace WinPaketManager.Lib.Controls
             Font = new Font(FontFamily.GenericMonospace, 10.0f);
             TextBrush = Brushes.Black;
             this.Caption = caption;
-            this.Style = ButtonViewButtonStyle.RectangleImageOnly;
+            this.Style = ButtonViewButtonStyle.RectangleImageWithText;
         }
 
         /// <summary>
@@ -137,11 +137,16 @@ namespace WinPaketManager.Lib.Controls
                 case (ButtonViewButtonStyle.EllipseImageWithText):
                     {
                          g.DrawEllipse(Pen, HitBox);
-                         float stringHeight = g.MeasureString(Caption, Font).Height;
+                         SizeF stringSize = g.MeasureString(Caption, Font);
+                         Rectangle pictureRectangle = new Rectangle((int)(HitBox.X + (0.3 * HitBox.Width)), (int)(HitBox.Y + (0.3 * HitBox.Height) - stringSize.Height), (int)(HitBox.Width - (0.6 * HitBox.Width)), (int)(HitBox.Height - (0.6 * HitBox.Height)));
                          if (this.Image != null)
                          {
-                             g.DrawImage(this.Image, new Rectangle((int)(HitBox.X + (0.2 * HitBox.Width)), (int)(HitBox.Y + (0.2 * HitBox.Height)), (int)(HitBox.Width - (0.4 * HitBox.Width)), (int)(HitBox.Height - (0.4 * HitBox.Height))));
+                             g.DrawImage(this.Image, pictureRectangle);
                          }
+                         float distanceToBorderHorizontal = (HitBox.Width - stringSize.Width) / 2;
+                         if (distanceToBorderHorizontal < 0)
+                             distanceToBorderHorizontal = 0;
+                         g.DrawString(Caption, Font, TextBrush, new PointF(this.HitBox.X + distanceToBorderHorizontal, pictureRectangle.Y + pictureRectangle.Height + 10));
                     }
                     break;
                 case (ButtonViewButtonStyle.RectangleImageOnly):
@@ -156,10 +161,16 @@ namespace WinPaketManager.Lib.Controls
                 case (ButtonViewButtonStyle.RectangleImageWithText):
                     {
                         g.DrawRectangle(Pen, HitBox);
+                        SizeF stringSize = g.MeasureString(Caption, Font);
+                        Rectangle pictureRectangle = new Rectangle((int)(HitBox.X + (0.3 * HitBox.Width)), (int)(HitBox.Y + (0.3 * HitBox.Height) - stringSize.Height), (int)(HitBox.Width - (0.6 * HitBox.Width)), (int)(HitBox.Height - (0.6 * HitBox.Height)));
                         if (this.Image != null)
                         {
-                            g.DrawImage(this.Image, new Rectangle((int)(HitBox.X + (0.2 * HitBox.Width)), (int)(HitBox.Y + (0.2 * HitBox.Height)), (int)(HitBox.Width - (0.4 * HitBox.Width)), (int)(HitBox.Height - (0.4 * HitBox.Height))));
+                            g.DrawImage(this.Image, pictureRectangle);
                         }
+                        float distanceToBorderHorizontal = (HitBox.Width - stringSize.Width) / 2;
+                        if (distanceToBorderHorizontal < 0)
+                            distanceToBorderHorizontal = 0;
+                        g.DrawString(Caption, Font, TextBrush, new PointF(this.HitBox.X + distanceToBorderHorizontal, pictureRectangle.Y + pictureRectangle.Height + 10));
                     }
                     break;
             }
