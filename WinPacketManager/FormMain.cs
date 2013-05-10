@@ -16,16 +16,13 @@ namespace WinPacketManager
 {
     public partial class FormMain : Form
     {
-        List<Repository> repositories;
-        List<string> categories;
         string curLog;
 
         public FormMain()
         {
             InitializeComponent();
             Logging.NewLog += Logging_NewLog;
-            categories = new List<string>();
-            repositories = new List<Repository>();
+            RepositoryManager.Init();
         }
 
         void Logging_NewLog(string logMessage)
@@ -51,73 +48,31 @@ namespace WinPacketManager
 
         private void FormMain_Shown(object sender, EventArgs e)
         {
-            repositories.Add(new Repository("http://outcast-prophets.no-ip.org/rep/"));
+            RepositoryManager.AddRepository(new Repository("http://outcast-prophets.no-ip.org/rep/"));
             updateToolStripMenuItem.PerformClick();
             if (lbCategories.Items.Count > 0)
                 lbCategories.SelectedIndex = 0;
         }
 
-        private void AddCategory(string cat)
-        {
-            foreach (string catName in categories)
-                if (catName == cat)
-                    return;
-            categories.Add(cat);
-            categories.Sort();
-            RefreshCategoryListBox();
-        }
-
         private void RefreshCategoryListBox()
         {
             lbCategories.Items.Clear();
-            foreach (string catName in categories)
+            foreach (string catName in RepositoryManager.Categories)
                 lbCategories.Items.Add(catName);
         }
 
         private void updateToolStripMenuItem_Click(object sender, EventArgs e)
         {
             bvPackets.Items.Clear();
-            foreach (Repository rep in repositories)
-            {
-                try
-                {
-                    rep.Update();
-                }
-                catch(Exception ex)
-                {
-                    Logging.Log("{0}: {1}", ex.GetType(), ex.Message);
-                }
-                foreach (Packet p in rep.Packets)
-                {
-                    AddCategory(p.Category);
-                    Logging.Log("Added {0}", p.Name);
-                }
-            }
+            RepositoryManager.Update();
+            RefreshCategoryListBox();
             bvPackets.Invalidate();
         }
 
-        private Packet GetPacketByName(string name)
-        {
-            foreach (Repository rep in repositories)
-                foreach (Packet p in rep.Packets)
-                    if (p.Name == name) return p;
-            Logging.Log("Packet {0} not found", name);
-            return null;
-        }
-
-        private Packet[] GetPacketsFromCategory(string catName)
-        {
-            List<Packet> result = new List<Packet>();
-            foreach (Repository rep in repositories)
-                foreach (Packet p in rep.Packets)
-                    if (p.Category == catName)
-                        result.Add(p);
-            return result.ToArray();
-        }
 
         private void bvPackets_ButtonClick(ButtonViewClickEventArgs e)
         {
-            Packet toInstall = GetPacketByName(e.Button.Caption);
+            Packet toInstall = RepositoryManager.GetPacketByName(e.Button.Caption);
             try
             {
                 new Thread(() => toInstall.ReferencedRepository.InstallPacket(toInstall, true)).Start();
@@ -131,7 +86,7 @@ namespace WinPacketManager
         private void lbCategories_SelectedIndexChanged(object sender, EventArgs e)
         {
             bvPackets.Items.Clear();
-            Packet[] packets = GetPacketsFromCategory((string)lbCategories.SelectedItem);
+            Packet[] packets = RepositoryManager.GetPacketsFromCategory((string)lbCategories.SelectedItem);
             foreach (Packet p in packets)
             {
                 ButtonViewButton bvb = new ButtonViewButton(p.Name);
@@ -143,7 +98,7 @@ namespace WinPacketManager
 
         private void repositoriesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormRepositoryManager frm = new FormRepositoryManager(ref repositories);
+            FormRepositoryManager frm = new FormRepositoryManager(RepositoryManager.Repositories);
             frm.ShowDialog();
         }
     }

@@ -86,7 +86,11 @@
     <Compile Include="Lib\Controls\ButtonViewClickEventArgs.cs" />
     <Compile Include="Lib\Exceptions\EmptyRepositoryException.cs" />
     <Compile Include="Lib\Exceptions\RepositoryUnreachableException.cs" />
+    <Compile Include="Lib\Managers\Command.cs" />
+    <Compile Include="Lib\Managers\Commands\RepositoryUpdateCommand.cs" />
     <Compile Include="Lib\Managers\Logging.cs" />
+    <Compile Include="Lib\Managers\RepositoryManager.cs" />
+    <Compile Include="Lib\Managers\ScriptInterpreter.cs" />
     <Compile Include="Lib\Objects\Packet.cs" />
     <Compile Include="Lib\Exceptions\PaketNotFoundException.cs" />
     <Compile Include="Lib\Objects\Repository.cs" />
@@ -141,6 +145,7 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

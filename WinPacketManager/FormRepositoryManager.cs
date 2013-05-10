@@ -15,7 +15,7 @@ namespace WinPacketManager
     {
         List<Repository> reps;
         List<string> toDel;
-        public FormRepositoryManager(ref List<Repository> repositories)
+        public FormRepositoryManager(List<Repository> repositories)
         {
             InitializeComponent();
             toDel = new List<string>();
