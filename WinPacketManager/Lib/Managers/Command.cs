@@ -13,6 +13,12 @@ namespace WinPacketManager.Lib.Managers
             get;
         }
 
+        public object[] Arguments
+        {
+            get;
+            set;
+        }
+
         void Run(params object[] args);
     }
 }

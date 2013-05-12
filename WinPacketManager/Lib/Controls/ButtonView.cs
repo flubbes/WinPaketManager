@@ -104,10 +104,6 @@ namespace WinPacketManager.Lib.Controls
                 throw new ArgumentOutOfRangeException();
             }
 
-            //int expectedWidth = (int)minWidth * itemCountHorizonzal;
-            //int restWidth = availableWidth - expectedWidth;
-            //int betweener = restWidth / itemCountHorizonzal;
-
             int curX = 0;
             int curY = 0;
             int itemCounter = 0;

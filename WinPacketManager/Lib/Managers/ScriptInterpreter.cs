@@ -9,6 +9,8 @@ namespace WinPacketManager.Lib.Managers
 {
     public class ScriptInterpreter
     {
+        List<Command> cmdList;
+        List<Command> currentCommands;
         List<string> lines;
         const char lineSeperator = ';';
 
@@ -35,12 +37,28 @@ namespace WinPacketManager.Lib.Managers
                         else
                         {
                             curParsedLine += splitArr[i];
-                            lines.Add(curParsedLine);
+                            ParseAndAddCommand(curParsedLine);
                             curParsedLine = string.Empty;
                         }
                     }
                 }
             }
+                
+        }
+
+        public void ParseAndAddCommand(string line)
+        {
+            if (currentCommands == null)
+                currentCommands = new List<Command>();
+            foreach (Command cmd in cmdList)
+                if (line.StartsWith(cmd.CommandString))
+                    currentCommands.Add(cmd);
+        }
+
+        public void RunCurrentScript()
+        {
+            foreach (Command cmd in currentCommands)
+                cmd.Run(cmd.Arguments);
         }
     }
 }
