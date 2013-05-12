@@ -64,6 +64,7 @@ namespace WinPacketManager
         private void updateToolStripMenuItem_Click(object sender, EventArgs e)
         {
             bvPackets.Items.Clear();
+            
             RepositoryManager.Update();
             RefreshCategoryListBox();
             bvPackets.Invalidate();
@@ -86,12 +87,15 @@ namespace WinPacketManager
         private void lbCategories_SelectedIndexChanged(object sender, EventArgs e)
         {
             bvPackets.Items.Clear();
-            Packet[] packets = RepositoryManager.GetPacketsFromCategory((string)lbCategories.SelectedItem);
-            foreach (Packet p in packets)
+            //Packet[] packets = RepositoryManager.GetPacketsFromCategory((string)lbCategories.SelectedItem);
+            foreach (Repository rep in RepositoryManager.Repositories)
             {
-                ButtonViewButton bvb = new ButtonViewButton(p.Name);
-                bvb.Image = p.ReferencedRepository.GetImageFromPacket(p);
-                bvPackets.Items.Add(bvb);
+                foreach (Packet p in rep.Packets)
+                {
+                    ButtonViewButton bvb = new ButtonViewButton(p.Name);
+                    bvb.Image = p.ReferencedRepository.GetImageFromPacket(p);
+                    bvPackets.Items.Add(bvb);
+                }
             }
             bvPackets.Invalidate();
         }

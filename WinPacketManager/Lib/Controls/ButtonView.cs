@@ -104,11 +104,11 @@ namespace WinPacketManager.Lib.Controls
                 throw new ArgumentOutOfRangeException();
             }
 
-            int expectedWidth = (int)minWidth * itemCountHorizonzal;
-            int restWidth = availableWidth - expectedWidth;
-            int betweener = restWidth / itemCountHorizonzal;
+            //int expectedWidth = (int)minWidth * itemCountHorizonzal;
+            //int restWidth = availableWidth - expectedWidth;
+            //int betweener = restWidth / itemCountHorizonzal;
 
-            int curX = betweener;
+            int curX = 0;
             int curY = 0;
             int itemCounter = 0;
             for (int i = 0; itemCounter < Items.Count; i++)
@@ -119,11 +119,11 @@ namespace WinPacketManager.Lib.Controls
                     {
                         Items[itemCounter].Location = new Point(curX, curY);
                         Items[itemCounter].Size = new System.Drawing.Size(Convert.ToInt32(minWidth), Convert.ToInt32(minWidth));
-                        curX += Convert.ToInt32(minWidth) + betweener;
+                        curX += Convert.ToInt32(minWidth);
                         itemCounter++;
                     }
                 }
-                curX = betweener;
+                curX = 0;
                 curY += Convert.ToInt32(minWidth);
             }
         }
