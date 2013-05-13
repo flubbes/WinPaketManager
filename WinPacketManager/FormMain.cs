@@ -104,5 +104,15 @@ namespace WinPacketManager
             FormRepositoryManager frm = new FormRepositoryManager(RepositoryManager.Repositories);
             frm.ShowDialog();
         }
+
+        private void loadScriptToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog ofd = new OpenFileDialog();
+            ofd.Filter = "WinPacketManager-Scriptfiles | *.wps";
+            if (ofd.ShowDialog() == DialogResult.OK)
+            {
+                
+            }
+        }
     }
 }

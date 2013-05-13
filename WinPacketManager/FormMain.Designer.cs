@@ -36,6 +36,7 @@
             this.lbLog = new System.Windows.Forms.ListBox();
             this.lbCategories = new System.Windows.Forms.ListBox();
             this.gbCategories = new System.Windows.Forms.GroupBox();
+            this.loadScriptToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.gbPackets.SuspendLayout();
             this.gbCategories.SuspendLayout();
@@ -45,7 +46,8 @@
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.repositoriesToolStripMenuItem,
-            this.updateToolStripMenuItem});
+            this.updateToolStripMenuItem,
+            this.loadScriptToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(830, 24);
@@ -121,6 +123,13 @@
             this.gbCategories.TabStop = false;
             this.gbCategories.Text = "Categories";
             // 
+            // loadScriptToolStripMenuItem
+            // 
+            this.loadScriptToolStripMenuItem.Name = "loadScriptToolStripMenuItem";
+            this.loadScriptToolStripMenuItem.Size = new System.Drawing.Size(77, 20);
+            this.loadScriptToolStripMenuItem.Text = "Load script";
+            this.loadScriptToolStripMenuItem.Click += new System.EventHandler(this.loadScriptToolStripMenuItem_Click);
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -156,6 +165,7 @@
         private System.Windows.Forms.ToolStripMenuItem updateToolStripMenuItem;
         private System.Windows.Forms.ListBox lbCategories;
         private System.Windows.Forms.GroupBox gbCategories;
+        private System.Windows.Forms.ToolStripMenuItem loadScriptToolStripMenuItem;
     }
 }
 
