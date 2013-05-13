@@ -14,6 +14,12 @@ namespace WinPacketManager.Lib.Managers.Commands
             get { return "repupdate"; }
         }
 
+        public object[] Arguments
+        {
+            get;
+            set;
+        }
+
         public void Run(params object[] args)
         {
             if (args.Length == 0)

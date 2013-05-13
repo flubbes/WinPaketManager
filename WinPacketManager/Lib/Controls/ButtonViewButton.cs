@@ -18,7 +18,7 @@ namespace WinPacketManager.Lib.Controls
             Font = new Font(FontFamily.GenericMonospace, 10.0f);
             TextBrush = Brushes.Black;
             this.Caption = caption;
-            this.BorderWidth = 1;
+            this.BorderWidth = 0;
             this.Style = ButtonViewButtonStyle.RectangleImageWithText;
         }
 

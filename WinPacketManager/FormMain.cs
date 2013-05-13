@@ -74,28 +74,27 @@ namespace WinPacketManager
         private void bvPackets_ButtonClick(ButtonViewClickEventArgs e)
         {
             Packet toInstall = RepositoryManager.GetPacketByName(e.Button.Caption);
-            try
+            FormDetails fd = new FormDetails(toInstall);
+            fd.ShowDialog();
+            /*try
             {
                 new Thread(() => toInstall.ReferencedRepository.InstallPacket(toInstall, true)).Start();
             }
             catch(Exception ex)
             {
                  Logging.Log("{0}: {1}", ex.GetType(), ex.Message);
-            }
+            }*/
         }
 
         private void lbCategories_SelectedIndexChanged(object sender, EventArgs e)
         {
             bvPackets.Items.Clear();
-            //Packet[] packets = RepositoryManager.GetPacketsFromCategory((string)lbCategories.SelectedItem);
-            foreach (Repository rep in RepositoryManager.Repositories)
+            Packet[] packets = RepositoryManager.GetPacketsFromCategory((string)lbCategories.SelectedItem);
+            foreach (Packet p in packets)
             {
-                foreach (Packet p in rep.Packets)
-                {
-                    ButtonViewButton bvb = new ButtonViewButton(p.Name);
-                    bvb.Image = p.ReferencedRepository.GetImageFromPacket(p);
-                    bvPackets.Items.Add(bvb);
-                }
+                ButtonViewButton bvb = new ButtonViewButton(p.Name);
+                bvb.Image = p.ReferencedRepository.GetImageFromPacket(p);
+                bvPackets.Items.Add(bvb);
             }
             bvPackets.Invalidate();
         }

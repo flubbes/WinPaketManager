@@ -32,10 +32,10 @@
             this.repositoriesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.updateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gbPackets = new System.Windows.Forms.GroupBox();
+            this.bvPackets = new WinPacketManager.Lib.Controls.ButtonView();
             this.lbLog = new System.Windows.Forms.ListBox();
             this.lbCategories = new System.Windows.Forms.ListBox();
             this.gbCategories = new System.Windows.Forms.GroupBox();
-            this.bvPackets = new WinPacketManager.Lib.Controls.ButtonView();
             this.menuStrip1.SuspendLayout();
             this.gbPackets.SuspendLayout();
             this.gbCategories.SuspendLayout();
@@ -77,6 +77,19 @@
             this.gbPackets.TabStop = false;
             this.gbPackets.Text = "Packets";
             // 
+            // bvPackets
+            // 
+            this.bvPackets.BorderWith = 0;
+            this.bvPackets.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.bvPackets.Location = new System.Drawing.Point(3, 16);
+            this.bvPackets.MinimumButtonHeight = 100;
+            this.bvPackets.MinimumButtonWidth = 100;
+            this.bvPackets.Name = "bvPackets";
+            this.bvPackets.ShowBorder = true;
+            this.bvPackets.Size = new System.Drawing.Size(651, 203);
+            this.bvPackets.TabIndex = 0;
+            this.bvPackets.ButtonClick += new WinPacketManager.Lib.Controls.ButtonView.ButtonViewClickEventHandler(this.bvPackets_ButtonClick);
+            // 
             // lbLog
             // 
             this.lbLog.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -107,19 +120,6 @@
             this.gbCategories.TabIndex = 5;
             this.gbCategories.TabStop = false;
             this.gbCategories.Text = "Categories";
-            // 
-            // bvPackets
-            // 
-            this.bvPackets.BorderWith = 0;
-            this.bvPackets.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.bvPackets.Location = new System.Drawing.Point(3, 16);
-            this.bvPackets.MinimumButtonHeight = 100;
-            this.bvPackets.MinimumButtonWidth = 100;
-            this.bvPackets.Name = "bvPackets";
-            this.bvPackets.ShowBorder = true;
-            this.bvPackets.Size = new System.Drawing.Size(651, 203);
-            this.bvPackets.TabIndex = 0;
-            this.bvPackets.ButtonClick += new WinPacketManager.Lib.Controls.ButtonView.ButtonViewClickEventHandler(this.bvPackets_ButtonClick);
             // 
             // FormMain
             // 

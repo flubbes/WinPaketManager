@@ -13,7 +13,7 @@ namespace WinPacketManager.Lib.Managers
             get;
         }
 
-        public object[] Arguments
+        object[] Arguments
         {
             get;
             set;
